@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://soda.io/soda_data_contract_json_schema_1_0_0.json",
     "title": "Soda data contract style 3",
     "description": "A data contract",

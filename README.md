@@ -5,18 +5,19 @@ A local Visual Studio Code extension that validates YAML contract files against 
 ## 🔍 Features
 
 - Automatically validates YAML files that match:
-  - `*/contract.yaml`
-  - `*/contract.yml`
-  - `*/contract/*.yaml`
-  - `*/contract/*.yml`
-  - `*/contracts/*.yaml`
-  - `*/contracts/*.yml`
+  - `**/contract.yaml`
+  - `**/contract.yml`
+  - `**/contract/*.yaml`
+  - `**/contract/*.yml`
+  - `**/contracts/*.yaml`
+  - `**/contracts/*.yml`
+  - `**/*.contract.yaml`
+  - `**/*.contract.yml`
+- Supports custom file matching patterns via `.contract-validator.yaml`.
 - Ensures contract files follow a strict structure defined in a local JSON schema.
 
 ## 📦 Installation Guide
 
-You can either download yaml-contract-validator-0.0.1.vsix file directly. In this case move to step 5.
-Otherwise first follow steps from 1 to 4.
 
 ### 1. Clone this repository
 
@@ -31,13 +32,7 @@ cd yaml-contract-validator
 npm install
 ```
 
-### 3. Compile the extension
-
-```bash
-npm run compile
-```
-
-### 4. Package the extension
+### 3. Package the extension
 
 Install the VS Code Extension CLI if not already installed:
 
@@ -57,7 +52,7 @@ This will generate a file like:
 yaml-contract-validator-0.0.1.vsix
 ```
 
-### 5. Install the extension in VS Code
+### 4. Install the extension in VS Code
 
 ```bash
 code --install-extension yaml-contract-validator-0.0.1.vsix
@@ -67,5 +62,23 @@ code --install-extension yaml-contract-validator-0.0.1.vsix
 https://marketplace.visualstudio.com/items/?itemName=redhat.vscode-yaml
 
 ### 7. Restart VS Code
+```
+Cmd+Shift+P → Reload Window
+```
+
+### 8. Custom Configuration
+To customize which files should be validated, create a .contract-validator.yaml file in the root of your workspace:
+
+```
+fileMatch:
+  - "**/*.contract.yaml"
+```
+This overrides the default match patterns.
+
+Restart VS Code
+```
+Cmd+Shift+P → Reload Window
+```
+
 
 Happy validating!

@@ -5,29 +5,26 @@
     "version": "0.0.1",
     "publisher": "your-name-or-org",
     "engines": {
-      "vscode": "^1.50.0"
+        "vscode": "^1.50.0"
     },
     "categories": [
-      "Linters"
+        "Linters"
     ],
-    "contributes": {
-      "yamlValidation": [
-        {
-          "fileMatch": [
-            "*/contract.yaml",
-            "*/contract.yml",
-            "*/contract/*.yaml",
-            "*/contract/*.yml",
-            "*/contracts/*.yaml",
-            "*/contracts/*.yml"
-          ],
-          "url": "./schema/contract-schema.json"
-        }
-      ]
+    "activationEvents": [
+        "onLanguage:yaml"
+    ],
+    "main": "./out/extension.js",
+    "scripts": {
+        "compile": "tsc -p .",
+        "vscode:prepublish": "npm run compile"
     },
     "devDependencies": {
-      "typescript": "^5.0.0",
-      "@types/node": "^18.0.0"
+        "@types/js-yaml": "^4.0.0",
+        "@types/node": "^18.0.0",
+        "@types/vscode": "^1.50.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "js-yaml": "^4.1.0"
     }
-  }
-  
+}
