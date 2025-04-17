@@ -1,0 +1,33 @@
+{
+    "name": "yaml-contract-validator",
+    "displayName": "YAML Contract Validator",
+    "description": "Validates YAML contract files against a JSON schema",
+    "version": "0.0.1",
+    "publisher": "your-name-or-org",
+    "engines": {
+      "vscode": "^1.50.0"
+    },
+    "categories": [
+      "Linters"
+    ],
+    "contributes": {
+      "yamlValidation": [
+        {
+          "fileMatch": [
+            "*/contract.yaml",
+            "*/contract.yml",
+            "*/contract/*.yaml",
+            "*/contract/*.yml",
+            "*/contracts/*.yaml",
+            "*/contracts/*.yml"
+          ],
+          "url": "./schema/contract-schema.json"
+        }
+      ]
+    },
+    "devDependencies": {
+      "typescript": "^5.0.0",
+      "@types/node": "^18.0.0"
+    }
+  }
+  
