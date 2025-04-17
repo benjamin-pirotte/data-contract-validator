@@ -54,8 +54,6 @@ export async function activate(context: vscode.ExtensionContext) {
 
   await config.update('yaml.schemas', yamlSchemas, vscode.ConfigurationTarget.Workspace);
 
-  vscode.window.showInformationMessage(`✅ Schema registered in workspace settings for ${fileMatch.length} pattern(s).`);
-  console.log('[Contract Validator] fileMatch patterns used:', fileMatch);
 }
 
 export function deactivate() {}

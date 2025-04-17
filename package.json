@@ -26,5 +26,9 @@
     },
     "dependencies": {
         "js-yaml": "^4.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/benjamin-pirotte/data-contract-validator"
     }
 }

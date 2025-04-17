@@ -1,0 +1,1 @@
+MIT License — For internal use only
