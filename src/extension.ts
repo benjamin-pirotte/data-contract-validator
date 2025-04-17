@@ -4,7 +4,6 @@ import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 
 export async function activate(context: vscode.ExtensionContext) {
-  vscode.window.showInformationMessage('🎉 YAML Contract Validator activated');
 
   const defaultFileMatches = [
     `**/contract.yaml`,
@@ -32,7 +31,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
         if (Array.isArray(config?.fileMatch)) {
           fileMatch = config.fileMatch;
-          vscode.window.showInformationMessage('✅ Using patterns from contract_validator.yaml');
+          vscode.window.showInformationMessage('Contract Validator activated using patterns from contract_validator.yaml');
         } else {
           vscode.window.showWarningMessage('⚠️ "fileMatch" not found or invalid in contract_validator.yaml, using defaults.');
         }
@@ -40,7 +39,7 @@ export async function activate(context: vscode.ExtensionContext) {
         vscode.window.showWarningMessage('⚠️ Failed to parse contract_validator.yaml, using defaults.');
       }
     } else {
-      vscode.window.showInformationMessage('📦 No contract_validator.yaml found, using default file match patterns.');
+      vscode.window.showInformationMessage('Contract Validator activated using default file match patterns.');
     }
   }
 
